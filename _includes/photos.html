@@ -1,0 +1,44 @@
+<div class="lightbox">
+    {% include photo.html id="p001" url="/assets/images/photos/001.jpg" next="p002" %}
+    {% include photo.html id="p002" url="/assets/images/photos/002.jpg" prev="p001" next="p003" %}
+    {% include photo.html id="p003" url="/assets/images/photos/003.jpg" prev="p002" next="p004" %}
+    {% include photo.html id="p004" url="/assets/images/photos/004.jpg" prev="p003" next="p005" %}
+    {% include photo.html id="p005" url="/assets/images/photos/005.jpg" prev="p004" next="p006" %}
+    {% include photo.html id="p006" url="/assets/images/photos/006.jpg" prev="p005" next="p007" %}
+    {% include photo.html id="p007" url="/assets/images/photos/007.jpg" prev="p006" next="p008" %}
+    {% include photo.html id="p008" url="/assets/images/photos/008.jpg" prev="p007" next="p009" %}
+    {% include photo.html id="p009" url="/assets/images/photos/009.jpg" prev="p008" next="p010" %}
+    {% include photo.html id="p010" url="/assets/images/photos/010.jpg" prev="p009" next="p011" %}
+    {% include photo.html id="p011" url="/assets/images/photos/011.jpg" prev="p010" next="p012" %}
+    {% include photo.html id="p012" url="/assets/images/photos/012.jpg" prev="p011" next="p013" %}
+    {% include photo.html id="p013" url="/assets/images/photos/013.jpg" prev="p012" next="p014" %}
+    {% include photo.html id="p014" url="/assets/images/photos/014.jpg" prev="p013" next="p015" %}
+    {% include photo.html id="p015" url="/assets/images/photos/015.jpg" prev="p014" %}
+</div>
+<script type="text/javascript">
+    document.body.addEventListener('keyup', function (event) {
+        const
+            key = event.key,
+            selector = '.lightbox figure:target',
+            keyMap = {
+                ArrowLeft: `${selector} nav a[rel="prev"]`,
+                ArrowRight: `${selector} nav a[rel="next"]`,
+                Escape: `${selector} a[href="#"]`,
+            };
+
+        if (key in keyMap) {
+            const element = event.target.querySelector( keyMap[key] );
+            if (element) {
+                element.click();
+            }
+        }
+    });
+
+    document.querySelectorAll('.lightbox figure').forEach(function (element) {
+       element.addEventListener('click', function (event) {
+           if (event.target === element) {
+               element.querySelector('a[href="#"]').click();
+           }
+       });
+    });
+</script>

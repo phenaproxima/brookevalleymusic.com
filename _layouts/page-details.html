@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="post">
+  <h1 class="post-title">{{ page.title | escape }}</h1>
+  {{ content }}
+</article>
+
+<section class="sidebar">
+  <aside id="fees">
+    <h2>Fees</h2>
+    <dl>
+      <dt>$1150</dt>
+      <dd>per week-long session (7 days)</dd>
+      <dt>$950</dt>
+      <dd>per consecutive week</dd>
+      <dt>$750</dt>
+      <dd>4-day mini-intensive session</dd>
+      <dt>$510</dt>
+      <dd>per week-long session <i>for students enrolled in full-time post-undergraduate studies</i></dd>
+    </dl>
+    <p>(All prices in US dollars.)</p>
+  </aside>
+  <aside id="location">
+    <h2>Where are we located?</h2>
+    <p>{{ site.title }} is located in rural east-central Ontario, Canada, near the picturesque town of Perth. It is just over a 1-hour drive southwest from the Ottawa International Airport. For our US-based visitors, we're about a 2 1/2 hour drive (more if there are long lines at the Canadian border) north of Syracuse, NY on Interstate 81.</p>
+  </aside>
+</section>

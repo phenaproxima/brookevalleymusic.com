@@ -1,0 +1,204 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+@font-face {
+  font-family: 'P22 Vincent';
+  src:
+          url('fonts/p22_vincent_regular-webfont.woff2') format('woff2'),
+          url('fonts/p22_vincent_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$green: #92b708;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: {
+    image: url('images/body.jpg');
+    repeat: no-repeat;
+    position: center top;
+  };
+  margin-top: 22px;
+}
+
+hr {
+  border: 1px solid #90be14;
+  padding-top: 1px;
+}
+
+h1 {
+  color: #668c02;
+  font: {
+    family: 'P22 Vincent', 'Times New Roman', serif;
+    weight: 400;
+    size: 3.4em;
+  }
+}
+
+blockquote {
+  color: $green;
+  line-height: 1.75;
+
+  cite {
+    color: $text-color;
+    font-style: normal;
+    font-size: .6em;
+    display: block;
+
+    strong {
+      display: block;
+      font-size: 1.3em;
+    }
+  }
+}
+
+main {
+  a {
+    color: #5d7d04;
+    transition: color .25s;
+
+    &:hover {
+      color: #90be14;
+    }
+  }
+
+  .wrapper {
+    padding: 2em;
+    display: flex;
+    background-color: white;
+
+    article {
+      flex: 2;
+    }
+
+    .sidebar {
+      flex: 1;
+      margin-left: 4em;
+    }
+  }
+}
+
+body > footer {
+  background-color: #496200;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  address {
+    color: $green;
+  }
+
+  nav {
+    text-transform: lowercase;
+
+    a {
+      &:not(:last-child) {
+        margin-right: 1em;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .copyright {
+    display: block;
+    font-style: italic;
+  }
+}
+
+.lightbox figure {
+  display: none;
+
+  img {
+    box-shadow: 0 0 48px rgba(0, 0, 0, .6);
+    max-width: 50%;
+    height: auto;
+  }
+
+  a {
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 3em;
+    width: 3em;
+
+    &[href="#"] {
+      margin: 2em 2em 0 0;
+      align-self: flex-end;
+      background-image: url('images/cancel.svg');
+    }
+  }
+
+  nav {
+    margin-bottom: 2em;
+
+    a {
+      &[rel="prev"] {
+        background-image: url('images/prev.svg');
+      }
+
+      &[rel="next"] {
+        background-image: url('images/next.svg');
+      }
+    }
+  }
+
+  &:target {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+/* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.sidebar aside {
+  background: {
+    color: #726244;
+    repeat: no-repeat;
+    position: bottom right;
+    image: url('images/block.gif');
+  }
+  border-radius: 1em;
+  margin-bottom: 2em;
+  padding: 1em;
+  color: white;
+
+  &#fees {
+    dt {
+      font-weight: bold;
+    }
+    dd {
+      margin-bottom: 1em;
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+}

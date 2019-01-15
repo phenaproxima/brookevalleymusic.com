@@ -1,0 +1,13 @@
+<footer class="site-footer h-card">
+    <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+    <div class="wrapper">
+        <address>{{ site.title }} &middot; 341 Perkins Rd. &middot; Perth, ON</address>
+        {%- if page_paths -%}
+        <nav>{%- include nav.html -%}</nav>
+        {%- endif -%}
+        {%- include social.html -%}
+        <small class="copyright">&copy; 2019 Brooke Valley Musician's Retreat. All rights reserved.<br/>Site by Smashing Media Design</small>
+    </div>
+    {%- include photos.html -%}
+</footer>
