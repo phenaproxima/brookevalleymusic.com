@@ -1,8 +1,333 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+@charset "utf-8";
 
-@import "minima";
+// Define defaults for each variable.
+
+$base-font-family: -apple-system, Georgia, "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px !default;
+
+$text-color:       #5a4a42 !default;
+$background-color: #786747 !default;
+$green: #92b708;
+
+// Width of the content area
+$content-width:    990px !default;
+
+@mixin full-size ($width: 800px) {
+  @media screen and (min-width: $width) {
+    @content
+  }
+}
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  background: {
+    image: url('images/body.jpg');
+    color: $background-color;
+    repeat: no-repeat;
+    position: center top;
+  };
+  margin-top: 22px;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * `main` element
+ */
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  font-style: italic;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Wrapper
+ */
+.wrapper {
+  max-width: $content-width;
+  margin: 0 auto;
+  @extend %clearfix;
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/**
+ * Icons
+ */
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  padding-right: 5px;
+  vertical-align: text-top;
+}
+
+$logo-left-margin: 50px;
+
+%no-print {
+  @media print {
+    display: none;
+  }
+}
+
+/**
+ * Site header
+ */
+.site-header {
+  @extend %no-print;
+  // Positioning context for the mobile navigation icon
+  position: relative;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 134px;
+    max-width: $content-width + 30px;
+  }
+}
+
+.site-title {
+  display: block;
+  margin-left: 1em;
+
+  @include full-size {
+    position: absolute;
+    margin-left: $logo-left-margin;
+  }
+}
+
+.site-nav {
+  color: white;
+  background-color: $green;
+  font: 2.5em 'P22 Vincent', Georgia, serif;
+
+  @include full-size {
+    background-color: transparent;
+  }
+
+  &:before {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    max-width: $content-width;
+    height: 10px;
+
+    @include full-size {
+      content: " ";
+    }
+  }
+
+  .trigger {
+    background-color: $green;
+    border-radius: 8px;
+
+    @include full-size {
+      box-shadow: 0 0 6px rgba(0, 0, 0, .4);
+      padding-left: $logo-left-margin + 236px;
+    }
+  }
+
+  .nav-trigger {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+    text-transform: lowercase;
+
+    @include full-size {
+      display: inline-block;
+    }
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  label[for="nav-trigger"] {
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+
+    @include full-size {
+      display: none;
+    }
+  }
+
+  .menu-icon {
+    display: block;
+
+    > svg {
+      fill: white;
+    }
+  }
+
+  input ~ .trigger {
+    display: none;
+
+    @include full-size {
+      display: block;
+    }
+  }
+
+  input:checked ~ .trigger {
+    display: block;
+  }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  @extend %no-print;
+  padding: $spacing-unit 0;
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+  flex: 1;
+}
 
 @font-face {
   font-family: 'P22 Vincent';
@@ -13,19 +338,8 @@
   font-style: normal;
 }
 
-$green: #92b708;
-
 * {
   box-sizing: border-box;
-}
-
-body {
-  background: {
-    image: url('images/body.jpg');
-    repeat: no-repeat;
-    position: center top;
-  };
-  margin-top: 22px;
 }
 
 hr {
@@ -35,11 +349,10 @@ hr {
 
 h1 {
   color: #668c02;
-  font: {
-    family: 'P22 Vincent', 'Times New Roman', serif;
-    weight: 400;
-    size: 3.4em;
-  }
+  line-height: 1.2;
+  font-weight: 400;
+  font-size: 3.4em;
+  font-family: 'P22 Vincent', 'Times New Roman', serif;
 }
 
 blockquote {
@@ -71,8 +384,11 @@ main {
 
   .wrapper {
     padding: 2em;
-    display: flex;
     background-color: white;
+
+    @include full-size {
+      display: flex;
+    }
 
     article {
       flex: 2;
@@ -80,7 +396,10 @@ main {
 
     .sidebar {
       flex: 1;
-      margin-left: 4em;
+
+      @include full-size {
+        margin-left: 4em;
+      }
     }
   }
 }
@@ -123,15 +442,24 @@ body > footer {
 
   img {
     box-shadow: 0 0 48px rgba(0, 0, 0, .6);
-    max-width: 50%;
+    max-width: 90%;
     height: auto;
+
+    @include full-size {
+      max-width: 50%;
+    }
   }
 
   a {
     background-repeat: no-repeat;
     display: inline-block;
-    height: 3em;
-    width: 3em;
+    height: 2em;
+    width: 2em;
+
+    @include full-size {
+      height: 3em;
+      width: 3em;
+    }
 
     &[href="#"] {
       margin: 2em 2em 0 0;
