@@ -87,6 +87,11 @@ main {
 img {
   max-width: 100%;
   vertical-align: middle;
+
+  &.right {
+    float: right;
+    margin-left: 2em;
+  }
 }
 
 
@@ -226,8 +231,10 @@ $logo-left-margin: 50px;
 
 .site-nav {
   color: white;
+  font-size: 2.5em;
+  line-height: 1.6em;
   background-color: $green;
-  font: 2.5em 'P22 Vincent', Georgia, serif;
+  font-family: 'P22 Vincent', Georgia, serif;
 
   @include full-size {
     background-color: transparent;
@@ -247,7 +254,10 @@ $logo-left-margin: 50px;
 
   .trigger {
     background-color: $green;
-    border-radius: 8px;
+
+    @media screen and (min-width: #{$content-width + 30px}) {
+      border-radius: 8px;
+    }
 
     @include full-size {
       box-shadow: 0 0 6px rgba(0, 0, 0, .4);
@@ -256,14 +266,10 @@ $logo-left-margin: 50px;
   }
 
   .nav-trigger {
-    display: none;
+    display: none !important;
   }
 
-  .menu-icon {
-    display: none;
-  }
-
-  .page-link {
+  a {
     color: inherit;
     display: block;
     text-decoration: none;
@@ -317,8 +323,45 @@ $logo-left-margin: 50px;
  */
 .site-footer {
   @extend %no-print;
-  padding: $spacing-unit 0;
+
+  color: white;
+  background-color: #496200;
+
+  .wrapper {
+    padding: 2em 2% 0 2%;
+    background: url('images/footer.gif') no-repeat center top;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  address {
+    color: $green;
+  }
+
+  nav {
+    text-transform: lowercase;
+
+    a {
+      &:not(:last-child) {
+        margin-right: 1em;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
+
+.copyright {
+  padding: .5em;
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
 
 
 
@@ -404,39 +447,6 @@ main {
   }
 }
 
-body > footer {
-  background-color: #496200;
-  color: white;
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-
-  address {
-    color: $green;
-  }
-
-  nav {
-    text-transform: lowercase;
-
-    a {
-      &:not(:last-child) {
-        margin-right: 1em;
-      }
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
-  .copyright {
-    display: block;
-    font-style: italic;
-  }
-}
-
 .lightbox figure {
   display: none;
 
@@ -473,10 +483,12 @@ body > footer {
 
     a {
       &[rel="prev"] {
+        margin-right: 1em;
         background-image: url('images/prev.svg');
       }
 
       &[rel="next"] {
+        margin-left: 1em;
         background-image: url('images/next.svg');
       }
     }

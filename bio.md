@@ -5,8 +5,7 @@ permalink: /bio
 ---
 ## BVMR Artistic Director
 
-![A picture of Richard Hoenich, artistic director of Brooke Valley Musicians' Retreat](/assets/images/rh.jpg)
-
+![A picture of Richard Hoenich, artistic director of Brooke Valley Musicians' Retreat](/assets/images/rh.jpg){:class="right"}
 It’s perhaps natural that with his 30-year career as performer, conductor, teacher and coach, Richard Hoenich has the ideal background to mentor professional musicians who seek orchestra positions, and offer them the unique BVMR experience.
 
 A graduate of the Curtis Institute, Richard won his own position as principal bassoon with the Montreal Symphony Orchestra in 1979. It didn’t come easily. The orchestra held four auditions in six months until finally selecting him, even though he had competed in the previous three. This is in part why Richard became so interested in the process of audition preparation and performance and in helping others to pursue and realize their dreams.

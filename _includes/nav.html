@@ -3,10 +3,12 @@
     {%- assign my_page = site.pages | where: "path", path | first -%}
     {%- if my_page.title -%}
       {%- unless my_page.exclude -%}
-        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
       {%- endunless %}
     {%- endif -%}
   {%- endfor -%}
-  <a class="page-link" href="#p001">Photos</a>
-  <a class="page-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeAzW__26--TTfSV0iZ0_ZN9RdpzC4eWy92OGFnXShngcRjsw/viewform?usp=pp_url" target="_blank">Contact</a>
+<a href="#p001">Photos</a><!--
+This comment collapses the white space between these links.
+See https://css-tricks.com/fighting-the-space-between-inline-block-elements
+--><a href="https://docs.google.com/forms/d/e/1FAIpQLSeAzW__26--TTfSV0iZ0_ZN9RdpzC4eWy92OGFnXShngcRjsw/viewform?usp=pp_url" target="_blank">Contact</a>
 {%- endif -%}

@@ -1,8 +1,10 @@
 ---
-title: Welcome to Brooke Valley Musicians' Retreat
+title: Welcome to Brooke Valley Musician's Retreat
 layout: page
 exclude: true
 ---
+![A triptych of pictures of Brooke Valley Musicians' Retreat](/assets/images/splash.jpg)
+
 This is a special place. Secluded, rural, private and distraction-free, BVMR is designed for instrumentalists who want to reach the next level in their career development.
 
 If you are a professional musician who wants to win an orchestra job but has yet to be successful, a mid-career player looking for a recharge, or an up-and-coming performer seeking a deeper understanding of your art, we can help.
