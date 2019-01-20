@@ -231,6 +231,7 @@ $logo-left-margin: 50px;
 
 .site-nav {
   color: white;
+  padding: 12px;
   font-size: 2.5em;
   line-height: 1.6em;
   background-color: $green;
@@ -238,6 +239,7 @@ $logo-left-margin: 50px;
 
   @include full-size {
     background-color: transparent;
+    padding: 0;
   }
 
   &:before {
@@ -261,7 +263,7 @@ $logo-left-margin: 50px;
 
     @include full-size {
       box-shadow: 0 0 6px rgba(0, 0, 0, .4);
-      padding-left: $logo-left-margin + 236px;
+      padding-left: $logo-left-margin + 201px;
     }
   }
 
@@ -272,22 +274,21 @@ $logo-left-margin: 50px;
   a {
     color: inherit;
     display: block;
+    margin-left: 1rem;
     text-decoration: none;
     text-transform: lowercase;
 
     @include full-size {
       display: inline-block;
-    }
-
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 2rem;
+      margin-left: 2rem;
     }
   }
 
   label[for="nav-trigger"] {
+    text-align: right;
     cursor: pointer;
     display: block;
+    line-height: 0;
     z-index: 2;
 
     @include full-size {
