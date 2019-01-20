@@ -110,24 +110,17 @@ figure > img {
  */
 ul, ol {
   margin-left: $spacing-unit;
-}
 
-li {
-  > ul,
-  > ol {
-    margin-bottom: 0;
+  li {
+    margin-bottom: .5em;
+    list-style-image: url('images/li.png');
+
+    > ul,
+    > ol {
+      margin-bottom: 0;
+    }
   }
 }
-
-
-
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-}
-
-
 
 /**
  * Links
@@ -138,16 +131,7 @@ a {
   &:hover {
     text-decoration: underline;
   }
-
-  .social-media-list &:hover {
-    text-decoration: none;
-
-    .username {
-      text-decoration: underline;
-    }
-  }
 }
-
 
 /**
  * Blockquotes
@@ -187,11 +171,9 @@ blockquote {
  */
 
 .svg-icon {
-  width: 16px;
   height: 16px;
-  display: inline-block;
-  padding-right: 5px;
-  vertical-align: text-top;
+  width: 16px;
+  fill: white;
 }
 
 $logo-left-margin: 50px;
@@ -335,6 +317,11 @@ $logo-left-margin: 50px;
 
   a {
     color: inherit;
+
+    &[ href *= "facebook.com" ] {
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
   address {
@@ -342,6 +329,7 @@ $logo-left-margin: 50px;
   }
 
   nav {
+    margin: 1em 0 .5em 0;
     text-transform: lowercase;
 
     a {
@@ -371,6 +359,7 @@ $logo-left-margin: 50px;
  */
 .page-content {
   flex: 1;
+  font-size: .85rem;
 }
 
 @font-face {
@@ -389,6 +378,7 @@ $logo-left-margin: 50px;
 hr {
   border: 1px solid #90be14;
   padding-top: 1px;
+  margin: 2em 0;
 }
 
 h1 {
@@ -401,9 +391,16 @@ h1 {
 
 blockquote {
   color: $green;
+  font-size: 1.1em;
   line-height: 1.75;
 
   cite {
+    background: {
+      image: url('images/cite.gif');
+      repeat: no-repeat;
+    };
+    min-height: 36px;
+    padding-left: 50px;
     color: $text-color;
     font-style: normal;
     font-size: .6em;
@@ -532,6 +529,7 @@ main {
   &#fees {
     dt {
       font-weight: bold;
+      font-size: 1.3em;
     }
     dd {
       margin-bottom: 1em;
@@ -541,5 +539,6 @@ main {
   h2 {
     text-transform: uppercase;
     font-weight: normal;
+    font-size: 1.4rem;
   }
 }

@@ -32,6 +32,6 @@ Swimming in nearby Christie Lake, horseback riding, and other activities may als
 
 > "Brooke Valley had a holistic effect in healing my inner musician, including rest, nutrition, and finding a place where I could not only practice, but think too."
 >
-> <cite>L.W.S.<br />Freelance clarinet and sax player, DMA candidate, UNC-Greensboro<cite>
+> <cite>L.W.S.<br />Freelance clarinet and sax player, DMA candidate, UNC-Greensboro</cite>
 
 **[Contact us](/contact)** for more information.

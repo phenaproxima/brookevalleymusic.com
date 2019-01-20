@@ -1,3 +1,9 @@
-<ul class="social-media-list">
-  {%- if site.facebook_username -%}<li><a href="https://www.facebook.com/{{ site.facebook_username| cgi_escape | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#facebook' | relative_url }}"></use></svg> <span class="username">{{ site.facebook_username| escape }}</span></a></li>{%- endif -%}
-</ul>
+{%- if site.facebook_username -%}
+<a rel="noreferrer" href="https://www.facebook.com/{{ site.facebook_username| cgi_escape | escape }}">
+  <svg class="svg-icon">
+    <use xlink:href="{{ '/assets/minima-social-icons.svg#facebook' | relative_url }}" />
+  </svg>
+  <!--<span class="username">{{ site.facebook_username| escape }}</span>-->
+  <span class="visually-hidden">Follow {{ site.title }} on Facebook</span>
+</a>
+{%- endif -%}

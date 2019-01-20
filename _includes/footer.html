@@ -4,9 +4,11 @@
     <div class="wrapper">
         <address>{{ site.title }} &middot; 341 Perkins Rd. &middot; Perth, ON</address>
         {%- if page_paths -%}
-        <nav>{%- include nav.html -%}</nav>
+        <nav>
+            {%- include nav.html -%}
+            {%- include social.html -%}
+        </nav>
         {%- endif -%}
-        {%- include social.html -%}
     </div>
     <small class="copyright">&copy; 2019 Brooke Valley Musician's Retreat. All rights reserved.<br/>Site by Smashing Media Design</small>
 </footer>
