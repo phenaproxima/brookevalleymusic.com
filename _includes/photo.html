@@ -1,6 +1,6 @@
 <figure id="{{ include.id }}">
     <a href="#"><span class="visually-hidden">close</span></a>
-    <img src="{{ include.url | relative_url }}" />
+    <img src="{{ "/assets/images/spacer.gif" | relative_url }}" data-src="{{ include.url | relative_url }}" />
     <nav>
         {% if include.prev %}<a rel="prev" href="#{{ include.prev }}"><span class="visually-hidden">previous</span></a>{% endif %}
         {% if include.next %}<a rel="next" href="#{{ include.next }}"><span class="visually-hidden">next</span></a>{% endif %}

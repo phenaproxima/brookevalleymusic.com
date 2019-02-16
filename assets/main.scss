@@ -5,7 +5,7 @@
 
 // Define defaults for each variable.
 
-$base-font-family: -apple-system, Georgia, "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-family: Georgia, "Times New Roman", serif !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $base-line-height: 1.5 !default;
@@ -35,7 +35,14 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /**
  * Basic styling
@@ -70,20 +77,10 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
-
-
-/**
- * `main` element
- */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
-
-
-/**
- * Images
- */
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -92,18 +89,11 @@ img {
     float: right;
     margin-left: 2em;
   }
+
+  figure > & {
+    display: block;
+  }
 }
-
-
-
-/**
- * Figures
- */
-figure > img {
-  display: block;
-}
-
-
 
 /**
  * Lists
@@ -359,6 +349,7 @@ $logo-left-margin: 50px;
  */
 .page-content {
   flex: 1;
+  line-height: 1.8;
   font-size: .85rem;
 }
 
@@ -393,6 +384,11 @@ blockquote {
   color: $green;
   font-size: 1.1em;
   line-height: 1.75;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  width: 80%;
 
   cite {
     background: {
@@ -403,12 +399,12 @@ blockquote {
     padding-left: 50px;
     color: $text-color;
     font-style: normal;
-    font-size: .6em;
+    font-weight: bold;
+    font-size: .75em;
     display: block;
 
     strong {
       display: block;
-      font-size: 1.3em;
     }
   }
 }
@@ -452,6 +448,15 @@ main {
     box-shadow: 0 0 48px rgba(0, 0, 0, .6);
     max-width: 90%;
     height: auto;
+
+    &[ src $= "spacer.gif" ] {
+      width: 100px;
+      height: 100px;
+      animation: spin .8s linear infinite;
+      border: 16px solid rgba(255, 255, 255, .1);
+      border-top-color: white;
+      border-radius: 50%;
+    }
 
     @include full-size {
       max-width: 50%;
