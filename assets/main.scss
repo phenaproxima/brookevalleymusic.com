@@ -449,7 +449,7 @@ main {
     max-width: 90%;
     height: auto;
 
-    &[ src $= "spacer.gif" ] {
+    &.loading {
       width: 100px;
       height: 100px;
       animation: spin .8s linear infinite;

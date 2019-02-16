@@ -35,12 +35,24 @@
     });
 
     document.querySelectorAll('.lightbox figure').forEach(function (element) {
-       element.addEventListener('click', function (event) {
-           if (event.target === element) {
-               element.querySelector('a[href="#"]').click();
-           }
-       });
+        element.addEventListener('click', function (event) {
+            if (event.target === element) {
+                element.querySelector('a[href="#"]').click();
+            }
+        });
     });
 
-    document.querySelector('.site-nav a[ href ^= "#p" ]').classList.remove('visually-hidden');
+    window.addEventListener('hashchange', function () {
+        const image = document.querySelector(`.lightbox ${this.location.hash} img`);
+        if (image) {
+            image.addEventListener('load', function () {
+               this.classList.remove('loading');
+            });
+            image.src = image.getAttribute('data-src');
+        }
+    });
+
+    document.querySelectorAll('.lightbox').forEach(function (link) {
+        link.classList.remove('visually-hidden');
+    });
 </script>
